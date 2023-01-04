@@ -1,0 +1,45 @@
+#include <stdio.h>
+#define size 5
+struct stack
+{
+	int A[10];
+	int top;
+	};
+	struct stack push(struct stack,int);
+	void display(struct stack);
+	main()
+	{
+		struct stack s;
+		int ele;
+		s.top=-1;
+		s=push(s,ele);
+		display(s);
+		}
+	struct stack push(struct stack s,int ele)
+		{
+			int i;
+			for(i=0;i<size;i++)
+			{
+				printf("enter element:");
+				scanf("%d",&ele);
+				if(s.top<(size-1))
+				{
+				s.top++;
+				s.A[s.top]=ele;
+				}
+				else
+				{
+				printf("overflow\n");
+				}
+				}
+				printf("top index value=%d\n",s.top);
+				return s;
+				}
+				void display(struct stack s)
+				{
+					int i;
+					for(i=s.top;i>=0;i--)
+					{
+					printf("A[%d]=%d\n",i,s.A[i]);
+						}
+						}
